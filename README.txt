@@ -1,4 +1,4 @@
-=== Woo Direct Variation URL ===
+=== Direct Variation URL for WooCommerce ===
 Contributors: soudaniet
 Tags: woocommerce, product, variation, direct link, url
 Donate link: https://www.buymeacoffee.com/soudaniet
