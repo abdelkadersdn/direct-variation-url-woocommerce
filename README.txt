@@ -6,10 +6,10 @@ Tested up to: 5.9
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows you to load variations on your product via variables passed directly in the url
+This plugin allows you to load variations on your product page via variables passed directly in the url
 
 == Description ==
-This plugin allows you to load variations on your product via variables passed directly in the url
+This plugin allows you to load variations on your product page via variables passed directly in the url
 
 == Installation ==
 1- upload the plugin folder to /wp-content/plugins/ of your wordpress installation, or add new plugin via plugin installation page on your wordpress admin area and upload the plugin zip file
