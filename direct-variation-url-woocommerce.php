@@ -3,7 +3,7 @@
 Plugin Name: Direct Variation URL for WooCommerce
 Plugin URI: https://github.com/abdelkadersdn/direct-variation-url-woocommerce
 Description: This plugin allows you to load variations on your product page via get variables passed directly in the url (yourwebsite.com/your-product?color=black&size=large).
-Version: 1.0.0
+Version: 1.0.2
 Author: Abdelkader Soudani
 Author URI: https://abdelkader.com.tn
 */ 
@@ -18,14 +18,22 @@ if (!defined('ABSPATH')) {
 add_filter('woocommerce_product_get_default_attributes', 'wdvu_setup_swatches', 10, 2);
 
 function wdvu_setup_swatches($selected_attributes) {
-	$varation_names = wdvu_get_variation_values();
-	$start_vals = wdvu_get_variation_start_values( $varation_names );
+
+    global $product;
+
+	if(!is_admin()) {
+        if(is_a($product, 'WC_Product_Variable')) {
+            $variation_names = wdvu_get_variation_values();
+            $start_vals = wdvu_get_variation_start_values( $variation_names );
+            
+            if(!empty($start_vals)) {
+                return $start_vals;
+            } else {
+                return $selected_attributes;
+            }
+        }
+    }
 	
-	if(!empty($start_vals)) {
-		return $start_vals;
-	} else {
-		return $selected_attributes;
-	}
 }
 
 /*
@@ -41,13 +49,13 @@ function wdvu_get_variation_values() {
 	
 	// Create an array of possible variations
 	$available_variations = $product->get_variation_attributes();
-	$varation_names = array();
+	$variation_names = array();
 	
 	foreach ( $available_variations as $key => $variations ) {
-		array_push( $varation_names, $key );
+		array_push( $variation_names, $key );
 	}
 	
-	return $varation_names;
+	return $variation_names;
 }
 
 /*
@@ -59,7 +67,7 @@ function wdvu_get_variation_values() {
 *	@return array	start_vals
 *
 */	
-function wdvu_get_variation_start_values( $varation_names ) {
+function wdvu_get_variation_start_values( $variation_names ) {
 	global $product;
 
 	$all_variations = $product->get_variation_attributes();
@@ -68,7 +76,7 @@ function wdvu_get_variation_start_values( $varation_names ) {
 	// Check to see if any of the attributes are in $_GET vars
 	$start_vals = array();
 
-	foreach ( $varation_names as $name ) {
+	foreach ( $variation_names as $name ) {
 	
 		// Get the lower case name and remove the pa_ if they have it
 		$lower_name = strtolower( $name );
