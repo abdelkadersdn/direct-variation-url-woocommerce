@@ -1,15 +1,16 @@
 === Direct Variation URL for WooCommerce ===
 Contributors: soudaniet
-Tags: woocommerce, product, variation, direct link, url
 Donate link: https://www.buymeacoffee.com/soudaniet
-Tested up to: 1.0.2
-License: GPLv2
+Tags: woocommerce, product, variation, direct link, url
+Tested up to: 5.9
+Stable tag: 1.0.2
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin allows you to load variations on your product page via variables passed directly in the url
+This plugin allows you to load variations on your product page via get variables passed directly in the url (yourwebsite.com/your-product?color=black&size=large).
 
 == Description ==
-This plugin allows you to load variations on your product page via variables passed directly in the url
+This plugin allows you to load variations on your product page in the front-end part of the site via get variables passed directly in the url (yourwebsite.com/your-product?color=black&size=large).
 
 == Installation ==
 1- upload the plugin folder to /wp-content/plugins/ of your wordpress installation, or add new plugin via plugin installation page on your wordpress admin area and upload the plugin zip file
