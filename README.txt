@@ -11,8 +11,7 @@ This plugin allows you to load variations on your product page via get variables
 ex: (yourwebsite.com/your-product?color=black&size=large).
 
 == Description ==
-This plugin allows you to load variations on your product page in the front-end part of the site via get variables passed directly in the url 
-ex: (yourwebsite.com/your-product?color=black&size=large).
+This plugin allows you to load variations on your product page in the front-end part of the site via get variables passed directly in the url (yourwebsite.com/your-product?color=black&size=large).
 
 == Installation ==
 1- upload the plugin folder to /wp-content/plugins/ of your wordpress installation, or add new plugin via plugin installation page on your wordpress admin area and upload the plugin zip file
