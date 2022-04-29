@@ -32,7 +32,7 @@ function wdvu_setup_swatches($selected_attributes) {
                 return $selected_attributes;
             }
         }
-    }
+    } 
 	
 }
 
@@ -87,7 +87,7 @@ function wdvu_get_variation_start_values( $variation_names ) {
 		if ( isset( $_GET_lower[ $lower_name ] ) ) {
 		
 			foreach( $all_variations[ $name ] as $val ) {		
-				if ( strtolower( $val ) == strtolower( $_GET_lower[ $lower_name ] ) ) {
+				if ( strtolower( $val ) == strtolower( sanitize_text_field($_GET_lower[ $lower_name ]) ) ) {
 					$flag = true;
 				}			
 			}
@@ -100,7 +100,7 @@ function wdvu_get_variation_start_values( $variation_names ) {
 		} elseif ( isset( $_GET_lower[ $clean_name ] ) ) {
 		
 			foreach( $all_variations[ $name ] as $val ) {		
-				if ( strtolower( $val ) == strtolower( $_GET_lower[ $clean_name ] ) ) {
+				if ( strtolower( $val ) == strtolower( sanitize_text_field($_GET_lower[ $clean_name ]) ) ) {
 					$flag = true;
 				}			
 			}
